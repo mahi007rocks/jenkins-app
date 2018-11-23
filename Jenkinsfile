@@ -7,7 +7,7 @@ pipeline {
 // Remote server login
     stage('REMOTE LOGIN') {
       steps {
-        sh 'ssh jenkins@172.16.9.63:8000 -t "ssh root@172.16.10.128"'  
+        sh 'ssh jenkins@172.16.9.63:8080 -t "ssh root@172.16.10.128"'  
  //       sh 'ssh root@172.16.10.128'
       }
     }
