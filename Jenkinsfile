@@ -6,11 +6,12 @@ pipeline {
   stages { 
 // Remote server login
     stage('REMOTE LOGIN') {
-      steps {
-          
-            sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins']) {
-                sh 'ssh -o StrictHostKeyChecking=no root@172.16.10.128'
-                sh 'ssh -v root@172.16.10.128' }
+      steps 
+        {
+          sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins'])
+          { sh 'ssh -o StrictHostKeyChecking=no root@172.16.10.128'
+            sh 'ssh -v root@172.16.10.128' 
+          }
             
 //        sh 'ssh jenkins@172.16.9.63:8080 -t "ssh root@172.16.10.128"'  
 //        sh 'ssh root@172.16.10.128'
